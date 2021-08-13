@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
+import "normalize.css";
+import "./css/main.min.css";
 import App from "./App";
 import { AppWrapper } from "./context";
 ReactDOM.render(

@@ -12,6 +12,7 @@ export default function Home() {
     const { articles } = data;
     return (
       <main>
+        <h1 className="section-title">Aktualności</h1>
         {articles.map((article) => {
           const {
             tytul,

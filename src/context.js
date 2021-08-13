@@ -24,7 +24,7 @@ const AppWrapper = ({ children }) => {
       fetchData();
     }, [url]);
 
-    return { loading, error, data };
+    // return { loading, error, data };
   };
 
   return (

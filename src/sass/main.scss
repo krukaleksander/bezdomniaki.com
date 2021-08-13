@@ -1,0 +1,27 @@
+@import './sets';
+
+
+body {    
+      background: linear-gradient(to right, #4cb8c4, #3cd3ad);
+}
+
+.wrapper {
+    max-width: 1000px;
+    min-height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    background: whitesmoke;
+    border: 2px solid gray;
+    border-radius: 5px;
+    font-family: $content-font;
+    overflow-x: hidden;
+    h1,h2,h3,h4 {
+        font-family: $title-font;
+        letter-spacing: 1px;
+    }
+}
+
+@import './home';
+@import './header';
+@import './footer';
