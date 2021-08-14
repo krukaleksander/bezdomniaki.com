@@ -24,7 +24,7 @@ body {
 }
 
 .wrapper h1, .wrapper h2, .wrapper h3, .wrapper h4 {
-  font-family: "Anton", sans-serif;
+  font-family: "Raleway", sans-serif;
   letter-spacing: 1px;
 }
 
@@ -33,6 +33,57 @@ body {
   text-align: center;
   letter-spacing: 2px;
   color: #24858c;
+}
+
+article {
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 1px solid #3ed1af;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+article img {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+article div {
+  padding: 10px;
+}
+
+article div h1 {
+  color: #4a4646;
+}
+
+article div p {
+  color: #524242;
+}
+
+article div a {
+  display: block;
+  text-decoration: none;
+  color: white;
+  background: #3ed1b0;
+  width: 120px;
+  text-align: center;
+  padding: 10px;
+  border: none;
+  border-radius: 2px;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+article div a:hover {
+  color: #e4e1c1;
+  background-color: #4cb9c4;
 }
 
 .header {

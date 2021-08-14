@@ -1,0 +1,44 @@
+article {
+    padding: 10px;
+    display: flex;
+    border: 1px solid #3ed1af;
+    margin: 10px;
+    border-radius: 10px;
+
+    img {
+        align-self: center;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        margin: 5px;
+    }
+
+    div {
+        padding: 10px;
+
+        h1 {
+            color: $dark-color;
+        }
+
+        p {
+            color: $gray-like-color;
+        }
+
+        a {
+            display: block;
+            text-decoration: none;
+            color: white;
+            background: #3ed1b0;
+            width: 120px;
+            text-align: center;
+            padding: 10px;
+            border: none;
+            border-radius: 2px;
+            transition: .5s;
+            &:hover {
+                color: #e4e1c1;
+                background-color: #4cb9c4;
+            }
+        }
+    }
+}

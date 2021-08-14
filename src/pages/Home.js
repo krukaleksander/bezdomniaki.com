@@ -9,6 +9,7 @@ export default function Home() {
   if (loading) return <h1>Loading...</h1>;
   if (error) return <h1>Error</h1>;
   if (data) {
+    console.log(data);
     const { articles } = data;
     return (
       <main>
@@ -16,18 +17,27 @@ export default function Home() {
         {articles.map((article) => {
           const {
             tytul,
+            published_at,
             opis,
             zdjecie: {
               formats: {
-                thumbnail: { url },
+                thumbnail: { url, height },
               },
             },
           } = article;
           return (
             <article key="id">
-              <img src={`http://strapi.bezdomniaki.com/${url}`} alt="" />
-              <h1>{tytul}</h1>
-              <p>{opis}</p>
+              <img
+                src={`http://strapi.bezdomniaki.com/${url}`}
+                alt=""
+                style={{ height: height }}
+              />
+              <div>
+                <h1>{tytul}</h1>
+                <span>{published_at.slice(0, 10)}</span>
+                <p>{opis.slice(0, 400) + "..."}</p>
+                <a href="#">Czytaj więcej</a>
+              </div>
             </article>
           );
         })}
