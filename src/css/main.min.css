@@ -1,8 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=Raleway:wght@200;500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap");
 body {
-  background: -webkit-gradient(linear, left top, right top, from(#4cb8c4), to(#3cd3ad));
-  background: linear-gradient(to right, #4cb8c4, #3cd3ad);
+  background: url("../images/bg.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 .wrapper {
@@ -33,6 +35,125 @@ body {
   text-align: center;
   letter-spacing: 2px;
   color: #24858c;
+}
+
+body {
+  --menu-item-size: 50px;
+  --green-color: #222;
+  --blue-color: #222;
+  --element-color: #fff;
+  --white-color: #FFF;
+  --gray-color: #EDEDED;
+  --container-width: 700px;
+  --container-height: 400px;
+  --line-offset: calc((100% - var(--container-height))/ 2 + var(--menu-item-size) + 0.6em);
+}
+
+.main-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  margin: auto 0;
+  padding: 0.6em 0 0 0;
+}
+
+.main-menu > a {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: var(--menu-item-size);
+  width: calc(3.5 * var(--menu-item-size));
+  line-height: var(--menu-item-size);
+  padding: 0 2em;
+  margin: 1px;
+  -webkit-transition: 0.5s linear all;
+  transition: 0.5s linear all;
+  background: var(--green-color);
+  color: var(--element-color);
+  cursor: pointer;
+  font-size: 16px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.main-menu > a:not(.with-submenu) {
+  -webkit-clip-path: polygon(10% 0%, 0% 100%, 95% 100%, 100% 50%, 95% 0%);
+          clip-path: polygon(10% 0%, 0% 100%, 95% 100%, 100% 50%, 95% 0%);
+  shape-outside: polygon(10% 0%, 0% 100%, 95% 100%, 100% 50%, 95% 0%);
+}
+
+.main-menu i {
+  margin-right: 5px;
+}
+
+.main-menu > a:hover:not(.active) {
+  background: -webkit-gradient(linear, left top, right top, from(#ad8484), to(var(--blue-color)));
+  background: linear-gradient(to right, #ad8484, var(--blue-color));
+  color: var(--white-color);
+}
+
+.main-menu > a:active:not(.active),
+.main-menu > a:active:not(.with-submenu) {
+  background: var(--blue-color);
+  color: var(--white-color);
+}
+
+.main-menu > a:hover i:not(li.active) {
+  color: #175c58;
+}
+
+.main-menu .active {
+  color: var(--white-color);
+  background: var(--blue-color);
+  cursor: default;
+  text-shadow: 1px 1px 1px var(--element-color);
+  font-size: 18px;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  z-index: 10;
+  list-style: none;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  min-width: calc(3.5 * var(--menu-item-size) - 5%);
+  -webkit-box-shadow: 5px 5px 5px #CCC;
+          box-shadow: 5px 5px 5px #CCC;
+}
+
+.with-submenu {
+  position: relative;
+  display: inline-block;
+  -webkit-clip-path: polygon(10% 0%, 0% 100%, 0% 500%, 95% 500%, 95% 100%, 100% 50%, 95% 0%);
+          clip-path: polygon(10% 0%, 0% 100%, 0% 500%, 95% 500%, 95% 100%, 100% 50%, 95% 0%);
+  shape-outside: polygon(10% 0%, 0% 100%, 95% 100%, 100% 50%, 95% 0%);
+}
+
+.with-submenu:hover .submenu {
+  display: block;
+}
+
+.submenu > a {
+  background: #dedede;
+  border-bottom: 1px solid var(--gray-color);
+  color: #777;
+  padding: 1.2em 1em;
+  -webkit-transition: 0.3s all linear;
+  transition: 0.3s all linear;
+  display: block;
+  line-height: 0%;
+}
+
+.submenu > a:hover {
+  background: var(--gray-color);
+}
+
+.submenu > a:active {
+  background: var(--white-color);
 }
 
 article {

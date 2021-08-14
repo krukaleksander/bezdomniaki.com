@@ -3,13 +3,10 @@ import { useGlobalContext } from "../context";
 
 export default function Home() {
   const { loading, error, data, useFetch } = useGlobalContext();
-  const homePage = useFetch(
-    "http://strapi.bezdomniaki.com/categories/6110d82659af4802124aa0cc"
-  );
+  const homePage = useFetch("http://strapi.bezdomniaki.com/categories/home");
   if (loading) return <h1>Loading...</h1>;
   if (error) return <h1>Error</h1>;
   if (data) {
-    console.log(data);
     const { articles } = data;
     return (
       <main>

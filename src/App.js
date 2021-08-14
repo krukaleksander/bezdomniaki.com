@@ -17,13 +17,13 @@ export default function App() {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route path="/categories/:id">
+          <Route path="/categories/:link">
             <Category />
           </Route>
-          <Route path="/details/:id">
+          <Route path="/details/:link">
             <Article />
           </Route>
-          <Route path="/page/:id">
+          <Route path="/page/:link">
             <SinglePage />
           </Route>
         </Switch>

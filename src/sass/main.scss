@@ -2,7 +2,11 @@
 
 
 body {    
-      background: linear-gradient(to right, #4cb8c4, #3cd3ad);
+    //   background: linear-gradient(to right, #4cb8c4, #3cd3ad);
+    background: url('../images/bg.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 .wrapper {
@@ -23,6 +27,7 @@ body {
 }
 
 @import './home';
+@import './nav';
 @import './article';
 @import './header';
 @import './footer';
