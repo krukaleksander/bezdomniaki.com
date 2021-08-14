@@ -31,10 +31,10 @@ body {
 }
 
 .section-title {
+  padding: 10px;
   font-size: 25px;
-  text-align: center;
   letter-spacing: 2px;
-  color: #24858c;
+  color: #d58128;
 }
 
 body {
@@ -181,7 +181,8 @@ article div {
 }
 
 article div h1 {
-  color: #4a4646;
+  color: #d58128;
+  font-size: 23px;
 }
 
 article div p {
@@ -192,7 +193,7 @@ article div a {
   display: block;
   text-decoration: none;
   color: white;
-  background: #3ed1b0;
+  background: #d58128;
   width: 120px;
   text-align: center;
   padding: 10px;
@@ -204,7 +205,7 @@ article div a {
 
 article div a:hover {
   color: #e4e1c1;
-  background-color: #4cb9c4;
+  background: #985712;
 }
 
 .header {

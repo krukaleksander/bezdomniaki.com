@@ -17,7 +17,8 @@ article {
         padding: 10px;
 
         h1 {
-            color: $dark-color;
+            color: $orange-color;
+            font-size: 23px;
         }
 
         p {
@@ -28,7 +29,7 @@ article {
             display: block;
             text-decoration: none;
             color: white;
-            background: #3ed1b0;
+            background: $orange-color;
             width: 120px;
             text-align: center;
             padding: 10px;
@@ -37,7 +38,7 @@ article {
             transition: .5s;
             &:hover {
                 color: #e4e1c1;
-                background-color: #4cb9c4;
+                background: #985712;
             }
         }
     }
