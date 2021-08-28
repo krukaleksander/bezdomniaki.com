@@ -5,8 +5,14 @@ import { FaCat, FaInfoCircle } from "react-icons/fa";
 import { TiContacts } from "react-icons/ti";
 import { HiFire } from "react-icons/hi";
 import { Link } from "react-router-dom";
+import { useGlobalContext } from "../context";
 
 export default function Navbar() {
+  const { menu, useFetchMenu } = useGlobalContext();
+  const navigation = useFetchMenu("http://strapi.bezdomniaki.com/menus/");
+  if (menu) {
+    console.log(menu);
+  }
   return (
     <nav className="menu">
       <ul className="main-menu">

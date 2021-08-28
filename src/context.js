@@ -6,6 +6,7 @@ const AppWrapper = ({ children }) => {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [menu, setMenu] = useState(null);
 
   const useFetch = (url) => {
     useEffect(() => {
@@ -23,8 +24,21 @@ const AppWrapper = ({ children }) => {
       };
       fetchData();
     }, [url]);
+  };
 
-    // return { loading, error, data };
+  const useFetchMenu = (url) => {
+    useEffect(() => {
+      const fetchData = async () => {
+        try {
+          const response = await fetch(url);
+          const json = await response.json();
+          setMenu(json);
+        } catch (error) {
+          console.log(error);
+        }
+      };
+      fetchData();
+    }, [url]);
   };
 
   return (
@@ -34,6 +48,8 @@ const AppWrapper = ({ children }) => {
         error,
         data,
         useFetch,
+        menu,
+        useFetchMenu,
       }}
     >
       {children}
