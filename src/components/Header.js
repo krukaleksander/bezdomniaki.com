@@ -1,4 +1,4 @@
-import React, { CSSProperties } from "react";
+import React from "react";
 import logo from "../images/bezdomniaki_logo.jpeg";
 
 export default function Header() {

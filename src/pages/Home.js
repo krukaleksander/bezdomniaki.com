@@ -3,7 +3,7 @@ import { useGlobalContext } from "../context";
 
 export default function Home() {
   const { loading, error, data, useFetch } = useGlobalContext();
-  const homePage = useFetch("http://strapi.bezdomniaki.com/categories/home");
+  useFetch("http://strapi.bezdomniaki.com/categories/home");
   if (loading) return <h1>Loading...</h1>;
   if (error) return <h1>Error</h1>;
   if (data) {
@@ -16,6 +16,7 @@ export default function Home() {
             tytul,
             published_at,
             opis,
+            link,
             zdjecie: {
               formats: {
                 thumbnail: { url, height },
@@ -33,7 +34,7 @@ export default function Home() {
                 <h1>{tytul}</h1>
                 <span>{published_at.slice(0, 10)}</span>
                 <p>{opis.slice(0, 400) + "..."}</p>
-                <a href="#">Czytaj więcej</a>
+                <a href={link}>Czytaj więcej</a>
               </div>
             </article>
           );

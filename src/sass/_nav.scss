@@ -17,7 +17,8 @@ body {
     padding: 0.6em 0 0 0;
 }
 
-.main-menu>a {
+.main-menu>a,
+.with-submenu {
     box-sizing: border-box;
     height: var(--menu-item-size);
     width: calc(3.5 * var(--menu-item-size));
@@ -41,7 +42,8 @@ body {
     margin-right: 5px;
 }
 
-.main-menu>a:hover:not(.active) {
+.main-menu>a:hover:not(.active),
+.with-submenu:hover {
     background: linear-gradient(to right, #ad8484, var(--blue-color));
     color: var(--white-color);
 }

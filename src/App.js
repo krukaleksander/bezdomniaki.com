@@ -6,7 +6,7 @@ import Home from "./pages/Home";
 import Category from "./pages/Category";
 import SinglePage from "./pages/SinglePage";
 import Article from "./pages/Article";
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 export default function App() {
   return (
     <div className="wrapper">
