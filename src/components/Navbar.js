@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useGlobalContext } from "../context";
 
 export default function Navbar() {
-  const { menu, useFetchMenu } = useGlobalContext();
+  const { menu, useFetchMenu, setPath } = useGlobalContext();
   useFetchMenu("http://strapi.bezdomniaki.com/menus/");
   if (menu) {
     return (
@@ -14,7 +14,12 @@ export default function Navbar() {
             if (podkategorie) {
               if (menus.length < 1) {
                 return (
-                  <Link key={_id} to={url} className="">
+                  <Link
+                    key={_id}
+                    to={url}
+                    className=""
+                    onClick={() => setPath(`/categories${url}`)}
+                  >
                     {nazwa}
                   </Link>
                 );
@@ -28,7 +33,11 @@ export default function Navbar() {
                     {menus.map((submenu) => {
                       const { nazwa, url, _id } = submenu;
                       return (
-                        <Link key={_id} to={`/categories${url}`}>
+                        <Link
+                          key={_id}
+                          to={`/categories${url}`}
+                          onClick={() => setPath(`/categories${url}`)}
+                        >
                           {nazwa}
                         </Link>
                       );

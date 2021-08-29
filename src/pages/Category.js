@@ -3,9 +3,10 @@ import ArticleInList from "../components/ArticleInList";
 import { useGlobalContext } from "../context";
 
 export default function Category() {
-  const { categoryArticles, useFetchCategory } = useGlobalContext();
+  const { categoryArticles, useFetchCategory, path } = useGlobalContext();
+  const staticUrl = `http://strapi.bezdomniaki.com${window.location.pathname}`;
 
-  useFetchCategory(`http://strapi.bezdomniaki.com${window.location.pathname}`);
+  useFetchCategory(staticUrl);
 
   if (categoryArticles) {
     const { articles, Nazwa } = categoryArticles;

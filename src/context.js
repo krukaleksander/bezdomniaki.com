@@ -8,7 +8,7 @@ const AppWrapper = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [menu, setMenu] = useState(null);
   const [categoryArticles, setCategoryArticles] = useState(null);
-  const [path, setPath] = useState(window.location.pathname);
+  const [path, setPath] = useState(null);
 
   const useFetch = (url) => {
     useEffect(() => {
@@ -69,6 +69,8 @@ const AppWrapper = ({ children }) => {
         useFetchMenu,
         categoryArticles,
         useFetchCategory,
+        path,
+        setPath,
       }}
     >
       {children}
