@@ -1,6 +1,6 @@
 import React from "react";
 import { useGlobalContext } from "../context";
-
+import ArticleInList from "../components/ArticleInList";
 export default function Home() {
   const { loading, error, data, useFetch } = useGlobalContext();
   useFetch("http://strapi.bezdomniaki.com/categories/home");
@@ -13,6 +13,7 @@ export default function Home() {
         <h1 className="section-title">Aktualności</h1>
         {articles.map((article) => {
           const {
+            _id,
             tytul,
             published_at,
             opis,
@@ -24,19 +25,16 @@ export default function Home() {
             },
           } = article;
           return (
-            <article key="id">
-              <img
-                src={`http://strapi.bezdomniaki.com/${url}`}
-                alt=""
-                style={{ height: height }}
-              />
-              <div>
-                <h1>{tytul}</h1>
-                <span>{published_at.slice(0, 10)}</span>
-                <p>{opis.slice(0, 400) + "..."}</p>
-                <a href={link}>Czytaj więcej</a>
-              </div>
-            </article>
+            <ArticleInList
+              key={_id}
+              _id={_id}
+              tytul={tytul}
+              published_at={published_at}
+              opis={opis}
+              link={link}
+              url={url}
+              height={height}
+            />
           );
         })}
       </main>

@@ -23,7 +23,7 @@ export default function Navbar() {
 
               return (
                 //zamieniłem link na diva
-                <div key={_id} className="with-submenu" to="#">
+                <div key={_id} className="with-submenu">
                   {nazwa}
                   <ul className="submenu">
                     {menus.map((submenu) => {
