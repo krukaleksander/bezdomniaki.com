@@ -11,7 +11,6 @@ export default function Navbar() {
         <ul className="main-menu">
           {menu.map((link) => {
             const { _id, nazwa, podkategorie, url, menus } = link;
-            // działa :D
             if (podkategorie) {
               if (menus.length < 1) {
                 return (
@@ -29,7 +28,7 @@ export default function Navbar() {
                     {menus.map((submenu) => {
                       const { nazwa, url, _id } = submenu;
                       return (
-                        <Link key={_id} to={url}>
+                        <Link key={_id} to={`/categories${url}`}>
                           {nazwa}
                         </Link>
                       );
