@@ -6,14 +6,25 @@ export default function Navbar() {
   const { menu, useFetchMenu, setPath } = useGlobalContext();
   useFetchMenu("http://strapi.bezdomniaki.com/menus/");
   if (menu) {
-    console.log(menu);
     return (
       <nav className="menu">
         <ul className="main-menu">
           {menu.map((link) => {
-            const { _id, nazwa, podkategorie, url, menus } = link;
+            const { _id, nazwa, podkategorie, url, menus, isSingle } = link;
             if (podkategorie) {
               if (menus.length < 1) {
+                if (isSingle) {
+                  return (
+                    <Link
+                      key={_id}
+                      to={`/articles${url}`}
+                      className=""
+                      onClick={() => setPath(`/articles${url}`)}
+                    >
+                      {nazwa}
+                    </Link>
+                  );
+                }
                 return (
                   <Link
                     key={_id}
@@ -46,8 +57,8 @@ export default function Navbar() {
                       return (
                         <Link
                           key={_id}
-                          to={`/page${url}`}
-                          onClick={() => setPath(`/page${url}`)}
+                          to={`/articles${url}`}
+                          onClick={() => setPath(`/articles${url}`)}
                         >
                           {nazwa}
                         </Link>

@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Category from "./pages/Category";
-import SinglePage from "./pages/SinglePage";
+import Page from "./pages/Page";
 import Article from "./pages/Article";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 export default function App() {
@@ -23,8 +23,8 @@ export default function App() {
           <Route path="/details/:link">
             <Article />
           </Route>
-          <Route path="/page/:link">
-            <SinglePage />
+          <Route path="/articles/:link">
+            <Page />
           </Route>
         </Switch>
         <Footer />

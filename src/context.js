@@ -9,6 +9,7 @@ const AppWrapper = ({ children }) => {
   const [menu, setMenu] = useState(null);
   const [categoryArticles, setCategoryArticles] = useState(null);
   const [path, setPath] = useState(null);
+  const [article, setArticle] = useState(null);
 
   const useFetch = (url) => {
     useEffect(() => {
@@ -58,6 +59,20 @@ const AppWrapper = ({ children }) => {
     }, [url]);
   };
 
+  const useFetchArticle = (url) => {
+    useEffect(() => {
+      const fetchData = async () => {
+        try {
+          const response = await fetch(url);
+          const json = await response.json();
+          setArticle(json);
+        } catch (error) {
+          console.log(error);
+        }
+      };
+      fetchData();
+    }, [url]);
+  };
   return (
     <AppContext.Provider
       value={{
@@ -71,6 +86,8 @@ const AppWrapper = ({ children }) => {
         useFetchCategory,
         path,
         setPath,
+        article,
+        useFetchArticle,
       }}
     >
       {children}
