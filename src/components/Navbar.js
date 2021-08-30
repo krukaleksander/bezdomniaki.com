@@ -6,6 +6,7 @@ export default function Navbar() {
   const { menu, useFetchMenu, setPath } = useGlobalContext();
   useFetchMenu("http://strapi.bezdomniaki.com/menus/");
   if (menu) {
+    console.log(menu);
     return (
       <nav className="menu">
         <ul className="main-menu">
@@ -26,17 +27,27 @@ export default function Navbar() {
               }
 
               return (
-                //zamieniłem link na diva
                 <div key={_id} className="with-submenu">
                   {nazwa}
                   <ul className="submenu">
                     {menus.map((submenu) => {
-                      const { nazwa, url, _id } = submenu;
+                      const { nazwa, url, _id, isSingle } = submenu;
+                      if (!isSingle) {
+                        return (
+                          <Link
+                            key={_id}
+                            to={`/categories${url}`}
+                            onClick={() => setPath(`/categories${url}`)}
+                          >
+                            {nazwa}
+                          </Link>
+                        );
+                      }
                       return (
                         <Link
                           key={_id}
-                          to={`/categories${url}`}
-                          onClick={() => setPath(`/categories${url}`)}
+                          to={`/page${url}`}
+                          onClick={() => setPath(`/page${url}`)}
                         >
                           {nazwa}
                         </Link>

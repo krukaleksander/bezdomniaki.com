@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import ArticleInList from "../components/ArticleInList";
 import { useGlobalContext } from "../context";
 
 export default function Category() {
-  const { categoryArticles, useFetchCategory, path } = useGlobalContext();
+  const { categoryArticles, useFetchCategory } = useGlobalContext();
   const staticUrl = `http://strapi.bezdomniaki.com${window.location.pathname}`;
 
   useFetchCategory(staticUrl);
